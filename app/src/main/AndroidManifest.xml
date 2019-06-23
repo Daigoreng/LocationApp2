@@ -18,17 +18,17 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+        <!--端末名を"pony"に限定するためFirstActivityは使わないので起動時のActivityをMainActivityにした-->
         <activity
             android:name=".FirstActivity"
             android:label="@string/app_name" >
-
-
+        </activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
 
     </application>
 

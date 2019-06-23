@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
 		imageView.startAnimation(animation);
 		str = readFile(fileName);
 		dele = 1;
-
 	}
 
 
@@ -127,9 +126,10 @@ public class MainActivity extends AppCompatActivity {
 
 	//到着ボタンが押された
 	public void arrive(View v){
-		str = readFile(fileName);
+//		str = readFile(fileName);
 		task = new AsyncNetworkTask(this);
-		task.execute("https://sakura.mbc.co.jp/pony_trace/pony/arrive.php?terminal="+ str);
+//		task.execute("https://sakura.mbc.co.jp/pony_trace/pony/arrive.php?terminal="+ str);
+		task.execute("https://sakura.mbc.co.jp/pony_trace/pony/arrive.php?terminal=pony");
 		Toast.makeText(this,"運転お疲れ様でした", Toast.LENGTH_LONG).show();
 
 	}
@@ -153,12 +153,12 @@ public class MainActivity extends AppCompatActivity {
 		tv.append("緯度：" + loc.getLatitude() + "\n");
 		tv.append("経度：" + loc.getLongitude() + "\n");
 		tv.append("時刻：" + t + "\n");
-		tv.append("terminal：" + str +"\n");
-
+//		tv.append("terminal：" + str +"\n");
+		tv.append("terminal：pony \n");
 
 		task = new AsyncNetworkTask(this);
-		task.execute("https://sakura.mbc.co.jp/pony_trace/store_loc/store_loc.php?lat=" + loc.getLatitude() + "&lng=" + loc.getLongitude() + "&terminal="+ str + "&stat=" + dele);//terminalは複数台適用時に入力
-
+    //task.execute("https://sakura.mbc.co.jp/pony_trace/store_loc/store_loc.php?lat=" + loc.getLatitude() + "&lng=" + loc.getLongitude() + "&terminal="+ str + "&stat=" + dele);
+		task.execute("https://sakura.mbc.co.jp/pony_trace/store_loc/store_loc.php?lat=" + loc.getLatitude() + "&lng=" + loc.getLongitude() + "&terminal=pony" + "&stat=" + dele);
 	}
 
 	public String readFile(String file) {
@@ -177,7 +177,5 @@ public class MainActivity extends AppCompatActivity {
 		}
 		return str;
 	}
-
-
 
 }
