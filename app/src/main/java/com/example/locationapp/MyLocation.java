@@ -91,7 +91,7 @@ public class MyLocation {
 		loc_req=new LocationRequest();
 		loc_req.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 		loc_req.setInterval(10000);
-		loc_req.setFastestInterval(5000);
+		loc_req.setFastestInterval(10000);
 		LocationSettingsRequest.Builder b=new LocationSettingsRequest.Builder();
 		b.addLocationRequest(loc_req);
 		loc_set_req=b.build();
