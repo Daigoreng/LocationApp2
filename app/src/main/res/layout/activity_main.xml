@@ -84,19 +84,19 @@
             android:text="到着" />
 
 
-        <Button
-            android:id="@+id/button5"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="13dp"
-            android:layout_marginRight="13dp"
-            android:layout_marginBottom="8dp"
-            android:onClick="restart"
-            android:text="再登録" />
+        <!--<Button-->
+            <!--android:id="@+id/button5"-->
+            <!--style="@style/Widget.AppCompat.Button.Small"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_marginEnd="13dp"-->
+            <!--android:layout_marginRight="13dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:onClick="restart"-->
+            <!--android:text="再登録" />-->
 
 
     </RelativeLayout>
