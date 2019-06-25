@@ -100,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
 		my_loc.startLocationUpdate(this);
 		imageView.startAnimation(animation);
 		str = readFile(fileName);
-		dele = 1;
 	}
 
 
@@ -144,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	// 位置情報の表示
-	public void displayLocationInfo(LocationResult lr) {
+	public void displayLocationInfo(LocationResult lr,boolean first_time) {
 		Location loc = lr.getLastLocation();
 		String t = DateFormat.getTimeInstance().format(new Date());
 		TextView tv = findViewById(R.id.report_area);
@@ -155,6 +154,8 @@ public class MainActivity extends AppCompatActivity {
 		tv.append("時刻：" + t + "\n");
 //		tv.append("terminal：" + str +"\n");
 		tv.append("terminal：pony \n");
+		// (三項演算子)first_timeがtrueの時はdeleが2(startの最初の1回だけ),falseの時は1(通常時)
+		dele=first_time?2:1;
 
 		task = new AsyncNetworkTask(this);
     //task.execute("https://sakura.mbc.co.jp/pony_trace/store_loc/store_loc.php?lat=" + loc.getLatitude() + "&lng=" + loc.getLongitude() + "&terminal="+ str + "&stat=" + dele);

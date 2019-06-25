@@ -28,6 +28,7 @@ public class MyLocation {
 	/***** 位置情報コールバック　******/
 	class MyLocationCallback extends LocationCallback {
 		private MainActivity main_act;
+		private boolean first_time=true;
 
 		// 生成する
 		public MyLocationCallback(MainActivity ma){
@@ -37,7 +38,10 @@ public class MyLocation {
 		// 位置情報の結果が得られた
 		public void onLocationResult(LocationResult lr){
 			super.onLocationResult(lr);
-			main_act.displayLocationInfo(lr);
+			//最初の1回だけtrueのまま送られる
+			main_act.displayLocationInfo(lr,first_time);
+			//falseになってから2回目以降は10秒毎に呼ばれるようになる
+			first_time=false;
 		}
 	}
 
