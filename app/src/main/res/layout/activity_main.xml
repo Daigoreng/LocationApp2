@@ -14,7 +14,10 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        android:keepScreenOn="true">>
+        <!--画面がスリープモードに入るとGPS情報を送信しないので明示的にアプリ起動時はスリープしないようにした-->
+
 
         <Button
             android:id="@+id/button2"
